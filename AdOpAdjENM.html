@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Neural Lesson: Advanced Opposing Adjectives (B1+/B2+) - By Coach Carlos O.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .gradient-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 4px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    .pulse-mic {
+      animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(225, 29, 72, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+    }
+    button, a {
+        -webkit-tap-highlight-color: transparent;
+    }
+    .pink-feedback-column {
+      background-color: #fdf2f8;
+      border-left: 4px solid #db2777;
+    }
+    /* Flip Chart Styles */
+    .perspective-1000 {
+      perspective: 1000px;
+    }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+    }
+    .rotate-y-180 {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-pink-200">
+
+  <!-- Header Banner -->
+  <header class="gradient-header text-white py-6 sm:py-8 px-4 sm:px-8 shadow-xl">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 text-pink-300 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-3">
+          <span class="bg-pink-950/60 backdrop-blur px-3 py-1.5 rounded-lg border border-pink-400/30">EasyEnglishEducation</span>
+          <span class="hidden sm:inline">•</span>
+          <span class="bg-blue-900/40 px-3 py-1.5 rounded-lg">By Coach Carlos O.</span>
+        </div>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">Super Neural Lesson: Advanced Opposing Adjectives</h1>
+        <p class="text-blue-100 mt-2 text-sm sm:text-base max-w-2xl font-light leading-relaxed">
+          Immersive B1+/B2+ curriculum featuring 15 English-only Opposing Flip Charts, 13 Antonym Networks, and Position Rules.
+        </p>
+      </div>
+      <button id="global-tts-toggle" onclick="toggleGlobalAudio()" class="p-3 sm:px-4 sm:py-2.5 rounded-xl bg-blue-900/50 hover:bg-blue-800/80 text-white border border-blue-400/30 transition-all flex items-center gap-2 text-xs sm:text-sm font-semibold active:scale-95 touch-manipulation w-full sm:w-auto justify-center" title="Toggle Audio">
+        <i id="global-tts-icon" class="fa-solid fa-volume-high text-blue-300 text-lg sm:text-base"></i>
+        <span id="global-tts-status">US Voice On</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="bg-white border-b border-slate-200 sticky top-0 z-20 shadow-sm">
+    <div class="max-w-5xl mx-auto flex flex-wrap custom-scrollbar text-xs sm:text-sm font-semibold text-slate-600">
+      <button onclick="switchTab('mod1')" id="tab-mod1" class="tab-btn flex-1 min-w-[120px] px-4 py-3.5 border-b-2 border-blue-600 text-blue-600 focus:outline-none transition-all active:scale-95 touch-manipulation">
+        1: Neural Blueprint
+      </button>
+      <button onclick="switchTab('mod2')" id="tab-mod2" class="tab-btn flex-1 min-w-[120px] px-4 py-3.5 border-b-2 border-transparent hover:text-blue-600 focus:outline-none transition-all active:scale-95 touch-manipulation">
+        2: Opposite Flip Charts (15)
+      </button>
+      <button onclick="switchTab('mod3')" id="tab-mod3" class="tab-btn flex-1 min-w-[120px] px-4 py-3.5 border-b-2 border-transparent hover:text-blue-600 focus:outline-none transition-all active:scale-95 touch-manipulation">
+        3: Antonym Networks & Rules (13)
+      </button>
+      <button onclick="switchTab('mod4')" id="tab-mod4" class="tab-btn flex-1 min-w-[120px] px-4 py-3.5 border-b-2 border-transparent hover:text-blue-600 focus:outline-none transition-all active:scale-95 touch-manipulation">
+        4: Oral AI Lab (12)
+      </button>
+      <button onclick="switchTab('mod5')" id="tab-mod5" class="tab-btn flex-1 min-w-[120px] px-4 py-3.5 border-b-2 border-transparent hover:text-blue-600 focus:outline-none transition-all active:scale-95 touch-manipulation">
+        5: Error Clinic
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto p-4 sm:p-8">
+
+    <!-- MODULE 1: NEURAL BLUEPRINT -->
+    <section id="content-mod1" class="tab-content space-y-6">
+      <div class="bg-white p-5 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-6 bg-blue-600 rounded-full inline-block"></span>
+          Neural Activation Framework: Advanced Adjectives (B1+/B2+)
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+          At advanced stages, mastering descriptive modifiers requires bypassing mental translation. We utilize 100% English immersive pathways: Dual Coding Flip Charts connecting polar opposites, contextual antonym networks, and strict adjective positioning rules.
+        </p>
+
+        <!-- 3 Pillars Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+          <div class="bg-slate-900 text-slate-100 p-6 rounded-2xl border border-slate-800 text-center space-y-3 shadow-md">
+            <div class="w-12 h-12 bg-blue-600/30 text-blue-400 rounded-xl flex items-center justify-center mx-auto text-xl">
+              <i class="fa-solid fa-clone"></i>
+            </div>
+            <h3 class="font-bold text-blue-400 text-sm">1. Opposing Flip Charts</h3>
+            <p class="text-xs text-slate-300">Direct English-to-English cognitive mapping through 15 interactive antonym cards.</p>
+          </div>
+
+          <div class="bg-slate-900 text-slate-100 p-6 rounded-2xl border border-slate-800 text-center space-y-3 shadow-md">
+            <div class="w-12 h-12 bg-emerald-600/30 text-emerald-400 rounded-xl flex items-center justify-center mx-auto text-xl">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <h3 class="font-bold text-emerald-400 text-sm">2. Antonym Networks</h3>
+            <p class="text-xs text-slate-300">Expanding vocabulary depth across 13 contrasting advanced descriptors.</p>
+          </div>
+
+          <div class="bg-slate-900 text-slate-100 p-6 rounded-2xl border border-slate-800 text-center space-y-3 shadow-md">
+            <div class="w-12 h-12 bg-amber-600/30 text-amber-400 rounded-xl flex items-center justify-center mx-auto text-xl">
+              <i class="fa-solid fa-arrow-left-long"></i>
+            </div>
+            <h3 class="font-bold text-amber-400 text-sm">3. Position Rules</h3>
+            <p class="text-xs text-slate-300">Automating pre-noun placement for compound and extreme modifiers.</p>
+          </div>
+        </div>
+
+        <!-- Pink Feedback Highlight Box -->
+        <div class="pink-feedback-column p-5 rounded-xl space-y-2">
+          <h4 class="font-bold text-pink-900 text-sm flex items-center gap-2">
+            <i class="fa-solid fa-lightbulb text-pink-600"></i> Pro B2+ Tip:
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            Never pair extreme adjectives like <em>exhausted</em> or <em>fascinating</em> with <em>very</em>. Always use absolute intensifiers like <strong>absolutely</strong> or <strong>utterly</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 2: OPPOSING FLIP CHARTS (15 CARDS - ENGLISH ONLY) -->
+    <section id="content-mod2" class="tab-content hidden space-y-6">
+      <div class="bg-white p-5 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 flex items-center gap-3">
+          <span class="w-2.5 h-6 bg-blue-600 rounded-full inline-block"></span>
+          Advanced Opposing Flip Charts (15 English-Only Dual Coding Cards)
+        </h2>
+        <p class="text-slate-600 text-sm mb-6">Click any card to flip it and discover its <strong>opposite adjective</strong> in English, a professional context sentence, and native audio.</p>
+
+        <!-- Flip Charts Grid (15 Cards) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-gauge-high"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">STATE-OF-THE-ART</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-blue-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">OBSOLETE / OUTDATED</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The laboratory replaced obsolete equipment with state-of-the-art tech."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The laboratory replaced obsolete equipment with state-of-the-art tech.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-bolt"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">FAST-PACED</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-emerald-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">LEISURELY / SLOW-PACED</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"They prefer a leisurely lifestyle over a fast-paced corporate career."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('They prefer a leisurely lifestyle over a fast-paced corporate career.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">THOUGHT-PROVOKING</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-purple-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">TRIVIAL / UNINSPIRING</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The conference avoided trivial topics and focused on thought-provoking research."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The conference avoided trivial topics and focused on thought-provoking research.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-globe"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">WIDESPREAD</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-amber-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">LOCALIZED / RARE</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The economic crisis was widespread rather than localized."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The economic crisis was widespread rather than localized.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-battery-empty"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">EXHAUSTED</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-rose-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">ENERGETIC / REFRESHED</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"After a long sleep, the team felt energetic and refreshed."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('After a long sleep, the team felt energetic and refreshed.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-cyan-100 text-cyan-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-eye"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">FASCINATING</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-cyan-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">DULL / TEDIOUS</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The lecture was far from dull; it was utterly fascinating."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The lecture was far from dull; it was utterly fascinating.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-file-invoice"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">COMPREHENSIVE</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-teal-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">FRAGMENTED / PARTIAL</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"We submitted a comprehensive report rather than a fragmented analysis."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('We submitted a comprehensive report rather than a fragmented analysis.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">AMBIGUOUS</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-indigo-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">EXPLICIT / UNAMBIGUOUS</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The contract contained an unambiguous clause that required clarification."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The contract contained an unambiguous clause that required clarification.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-gem"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">INVALUABLE</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-violet-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">WORTHLESS / USELESS</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"Her expertise proved to be an invaluable asset rather than worthless feedback."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('Her expertise proved to be an invaluable asset rather than worthless feedback.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">PROMISING</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-orange-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">BLEAK / UNPROMISING</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"Despite bleak market forecasts, the startup looked remarkably promising."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('Despite bleak market forecasts, the startup looked remarkably promising.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 11 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">RIGID</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-sky-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">FLEXIBLE / ADAPTABLE</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"Modern management requires flexible policies instead of rigid guidelines."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('Modern management requires flexible policies instead of rigid guidelines.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 12 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-lime-100 text-lime-700 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">CONCISE</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-lime-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">PROLIX / VERBOSE</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The executive requested a concise summary rather than a verbose report."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The executive requested a concise summary rather than a verbose report.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 13 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">IMPARTIAL</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-pink-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">BIASED / PREJUDICED</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The arbitrator maintained an impartial stance during the dispute."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The arbitrator maintained an impartial stance during the dispute.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 14 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-yellow-100 text-yellow-700 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-sun"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">LUCID</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-yellow-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">OBSCURE / CONFUSING</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"Despite complex theories, the professor gave a lucid explanation."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('Despite complex theories, the professor gave a lucid explanation.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 15 -->
+          <div class="h-64 perspective-1000 cursor-pointer group" onclick="flipCard(this)">
+            <div class="relative w-full h-full transform-style-3d group-hover:rotate-y-180 duration-500 shadow-md rounded-2xl">
+              <div class="absolute inset-0 bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="w-16 h-16 bg-stone-200 text-stone-700 rounded-2xl flex items-center justify-center text-3xl mb-4"><i class="fa-solid fa-seedling"></i></div>
+                <h3 class="text-xl font-bold text-slate-900">SUSTAINABLE</h3>
+                <span class="text-xs text-slate-500 mt-2 font-medium">Click to flip 🔄</span>
+              </div>
+              <div class="absolute inset-0 bg-blue-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+                <div>
+                  <span class="text-[10px] font-bold text-stone-300 uppercase tracking-widest block mb-1">Opposite Adjective:</span>
+                  <h4 class="font-bold text-lg mb-1 text-cyan-300">UNSUSTAINABLE / DEPLETIVE</h4>
+                  <p class="text-xs text-blue-100 italic mt-2">"The corporation transitioned from unsustainable practices to green energy."</p>
+                </div>
+                <button onclick="event.stopPropagation(); speakText('The corporation transitioned from unsustainable practices to green energy.')" class="bg-blue-800 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-xl flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-volume-high"></i> Listen Audio
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 3: ANTONYM NETWORKS & RULES (13 ROWS) -->
+    <section id="content-mod3" class="tab-content hidden space-y-6">
+      <div class="bg-white p-5 sm:p-8 rounded-2xl shadow-sm border border-slate-200 space-y-6">
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-3 flex items-center gap-3">
+          <span class="w-2.5 h-6 bg-blue-600 rounded-full inline-block"></span>
+          Pillars 2 & 3: Antonym Networks (13 Pairs) & Position Rules (English-Only)
+        </h2>
+        <p class="text-slate-600 text-sm leading-relaxed">
+          Master advanced adjective pairs and automatic pre-noun positioning. Click the audio buttons to practice shadowing.
+        </p>
+
+        <!-- Antonym Networks Table (13 rows) -->
+        <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse min-w-[650px]">
+            <thead>
+              <tr class="bg-slate-100 border-b border-slate-300 text-slate-700 font-semibold uppercase tracking-wider">
+                <th class="p-4">Adjective A (Advanced)</th>
+                <th class="p-4">Opposite Adjective B (Antonym)</th>
+                <th class="p-4">Position Rule Example & Audio</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 font-mono text-xs sm:text-sm">
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Comprehensive</td>
+                <td class="p-4 text-slate-600 font-bold">Fragmented / Partial</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">comprehensive</strong> report</span>
+                  <button onclick="speakText('We submitted a comprehensive report rather than a fragmented analysis.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Ambiguous</td>
+                <td class="p-4 text-slate-600 font-bold">Explicit / Unambiguous</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>An <strong class="text-blue-600">ambiguous</strong> statement</span>
+                  <button onclick="speakText('The contract contained an ambiguous clause that required clarification.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Invaluable</td>
+                <td class="p-4 text-slate-600 font-bold">Worthless / Useless</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>An <strong class="text-blue-600">invaluable</strong> asset</span>
+                  <button onclick="speakText('Her expertise proved to be an invaluable asset to the project.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Promising</td>
+                <td class="p-4 text-slate-600 font-bold">Bleak / Unpromising</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">promising</strong> candidate</span>
+                  <button onclick="speakText('The firm hired a promising candidate for the senior role.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Rigid</td>
+                <td class="p-4 text-slate-600 font-bold">Flexible / Adaptable</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">rigid</strong> policy</span>
+                  <button onclick="speakText('Modern management requires flexible policies instead of rigid guidelines.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Concise</td>
+                <td class="p-4 text-slate-600 font-bold">Prolix / Verbose</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">concise</strong> summary</span>
+                  <button onclick="speakText('The executive requested a concise summary rather than a verbose report.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Impartial</td>
+                <td class="p-4 text-slate-600 font-bold">Biased / Prejudiced</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>An <strong class="text-blue-600">impartial</strong> judge</span>
+                  <button onclick="speakText('The arbitrator maintained an impartial stance during the dispute.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Lucid</td>
+                <td class="p-4 text-slate-600 font-bold">Obscure / Confusing</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">lucid</strong> explanation</span>
+                  <button onclick="speakText('Despite complex theories, the professor gave a lucid explanation.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Sustainable</td>
+                <td class="p-4 text-slate-600 font-bold">Unsustainable / Depletive</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">sustainable</strong> practice</span>
+                  <button onclick="speakText('The corporation transitioned from unsustainable practices to green energy.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Prudent</td>
+                <td class="p-4 text-slate-600 font-bold">Rash / Reckless</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">prudent</strong> investment</span>
+                  <button onclick="speakText('Making a prudent investment prevents financial losses.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Meticulous</td>
+                <td class="p-4 text-slate-600 font-bold">Careless / Sloppy</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">meticulous</strong> researcher</span>
+                  <button onclick="speakText('The meticulous researcher double-checked every laboratory result.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Feasible</td>
+                <td class="p-4 text-slate-600 font-bold">Impractical / Impossible</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">feasible</strong> solution</span>
+                  <button onclick="speakText('The engineering team proposed a feasible solution to the energy crisis.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 text-blue-700 font-bold">Resilient</td>
+                <td class="p-4 text-slate-600 font-bold">Fragile / Vulnerable</td>
+                <td class="p-4 flex items-center justify-between gap-2 text-slate-700">
+                  <span>A <strong class="text-blue-600">resilient</strong> economy</span>
+                  <button onclick="speakText('Building a resilient economy helps nations recover from recessions.')" class="p-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg text-xs font-sans font-bold flex items-center gap-1 shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 4: ORAL AI LAB & QUIZ (12 SCENARIOS WITH SHUFFLED OPTIONS) -->
+    <section id="content-mod4" class="tab-content hidden space-y-6">
+      <div class="bg-white p-5 sm:p-8 rounded-2xl shadow-sm border border-slate-200 space-y-6">
+        
+        <!-- Quiz Header / Status -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-200 pb-5 gap-4">
+          <div>
+            <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-widest text-blue-600 block mb-1" id="quiz-progress-text">Question 1 of 12</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 leading-tight">Advanced Adjectives Oral AI Lab (Shuffled)</h2>
+          </div>
+          <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-xl font-bold text-xs sm:text-sm border border-blue-200 w-full sm:w-auto text-center" id="score-badge">
+            Score: 0 / 12
+          </div>
+        </div>
+
+        <!-- Quiz Container Body -->
+        <div id="quiz-card-body" class="space-y-6">
+          <div id="scenario-box" class="bg-slate-100 border-l-4 border-blue-600 p-4 sm:p-5 rounded-r-xl text-xs sm:text-sm text-slate-700 leading-relaxed font-medium"></div>
+          <p id="prompt-box" class="text-slate-900 font-extrabold text-base sm:text-lg leading-snug px-2"></p>
+
+          <!-- Options Grid -->
+          <div id="options-grid" class="flex flex-col gap-3"></div>
+
+          <!-- Explanation Panel -->
+          <div id="explanation-box" class="hidden p-5 rounded-xl bg-blue-50 border border-blue-200 text-blue-900 text-xs sm:text-sm leading-relaxed shadow-inner"></div>
+
+          <!-- SPEECH PRACTICE & VOICE RECORDING SYSTEM PANEL -->
+          <div id="speech-practice-panel" class="bg-slate-900 text-slate-100 rounded-2xl p-5 sm:p-8 border border-slate-800 shadow-2xl space-y-6 mt-8 relative overflow-hidden">
+             <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-blue-900/20 blur-3xl pointer-events-none"></div>
+
+            <div class="flex justify-between items-start border-b border-slate-800 pb-4 relative z-10 gap-4">
+              <div class="flex-1">
+                <span class="text-[10px] font-bold text-cyan-400 uppercase tracking-widest block mb-1.5">Neural Speech Shadowing Lab</span>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">Listen to the native audio and record your voice for instant evaluation:</p>
+              </div>
+              <button onclick="playCurrentAudio()" class="p-3 bg-slate-800 hover:bg-slate-700 text-cyan-400 rounded-xl border border-slate-700 transition active:scale-95 touch-manipulation shadow-md shrink-0" title="Listen native audio">
+                <i class="fa-solid fa-volume-high text-lg"></i>
+              </button>
+            </div>
+
+            <!-- Target Sentence Display -->
+            <div class="bg-slate-950/80 p-5 rounded-xl border border-slate-800 relative z-10 shadow-inner">
+              <span class="text-[10px] font-bold text-slate-500 uppercase block mb-2 tracking-wider">Target Phrase:</span>
+              <p id="target-phrase-text" class="text-sm sm:text-base font-bold text-cyan-300 italic leading-snug">"Loading target audio..."</p>
+            </div>
+
+            <!-- Mic Controls -->
+            <div class="flex flex-col items-center justify-center py-6 border-t border-b border-slate-800/80 gap-5 relative z-10">
+              <button id="mic-btn" onclick="toggleSpeechRecording()" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transition-all transform active:scale-95 touch-manipulation">
+                <i class="fa-solid fa-microphone text-3xl" id="mic-icon"></i>
+              </button>
+              <p class="text-xs sm:text-sm font-semibold text-slate-400 text-center px-4" id="mic-status">Tap the microphone to record your voice</p>
+            </div>
+
+            <!-- Live Transcript Box -->
+            <div class="space-y-2 relative z-10">
+              <label class="block text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider">Real-Time Transcript:</label>
+              <div id="transcript-box" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 sm:p-5 min-h-[80px] text-xs sm:text-sm text-slate-300 italic font-mono flex items-center leading-relaxed">
+                Your transcribed speech will appear here in real time...
+              </div>
+            </div>
+
+            <!-- AI Feedback Box -->
+            <div id="feedback-box" class="hidden rounded-xl p-5 sm:p-6 border transition-all space-y-3 shadow-lg relative z-10">
+              <div class="flex items-center justify-between border-b border-slate-700/50 pb-3">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-wide flex items-center gap-2" id="feedback-title">
+                  <i class="fa-solid fa-chart-pie"></i> Pronunciation Score
+                </span>
+                <span class="text-2xl sm:text-3xl font-extrabold" id="feedback-score">0%</span>
+              </div>
+              <p class="text-xs sm:text-sm font-medium leading-relaxed pt-1" id="feedback-text"></p>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-slate-100">
+            <button onclick="playCurrentAudio()" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95 touch-manipulation">
+              <i class="fa-solid fa-volume-high"></i>
+              <span>Listen Native Audio</span>
+            </button>
+            <button id="btn-next" onclick="nextQuestion()" class="hidden w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold py-3.5 px-8 rounded-xl transition-all shadow-lg shadow-blue-600/30 active:scale-95 touch-manipulation flex items-center justify-center gap-2">
+              Next Scenario <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MODULE 5: ERROR CLINIC -->
+    <section id="content-mod5" class="tab-content hidden space-y-6">
+      <div class="bg-white p-5 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+          <span class="w-2.5 h-6 bg-blue-600 rounded-full inline-block"></span>
+          Module 5: Common Error Clinic (B1+/B2+)
+        </h2>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse min-w-[600px]">
+            <thead>
+              <tr class="bg-slate-100 border-b border-slate-300 text-slate-700 font-semibold uppercase tracking-wider">
+                <th class="p-4">Frequent Error (B1+/B2+)</th>
+                <th class="p-4">Correct Form</th>
+                <th class="p-4">Pedagogical Rationale</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="p-4 text-rose-600 font-mono">The presentation was very fascinating.</td>
+                <td class="p-4 text-emerald-700 font-mono font-bold">The presentation was absolutely fascinating.</td>
+                <td class="p-4 text-slate-600 leading-relaxed">Extreme adjectives cannot be preceded by gradable adverbs like 'very'; they require absolute intensifiers like 'absolutely'.</td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="p-4 text-rose-600 font-mono">We stayed in a five-stars hotel.</td>
+                <td class="p-4 text-emerald-700 font-mono font-bold">We stayed in a five-star hotel.</td>
+                <td class="p-4 text-slate-600 leading-relaxed">Compound modifiers preceding nouns maintain a singular numerical form.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-auto">
+    <div class="max-w-5xl mx-auto px-4 space-y-1">
+        <p class="font-medium text-slate-700">© Developed for educational excellence By Coach Carlos O.</p>
+        <p class="text-slate-400">EasyEnglishEducation &bull; Interactive Neuro-Linguistic Curriculum</p>
+    </div>
+  </footer>
+
+  <!-- MESSAGE TOAST -->
+  <div id="toast" class="fixed bottom-6 right-6 left-6 sm:left-auto transform translate-y-24 opacity-0 transition-all duration-300 z-50 px-6 py-4 rounded-xl shadow-2xl font-bold text-sm sm:text-base flex items-center gap-3 border pointer-events-none bg-slate-900/95 text-slate-100 border-slate-700">
+      <i id="toast-icon" class="fa-solid fa-circle-info text-xl shrink-0 text-blue-400"></i>
+      <span id="toast-msg">Message</span>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    let globalAudioEnabled = true;
+    let ttsInitialized = false;
+
+    function initializeAudioContext() {
+        if (!ttsInitialized && 'speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance('');
+            utterance.volume = 0;
+            window.speechSynthesis.speak(utterance);
+            ttsInitialized = true;
+        }
+    }
+    window.addEventListener('click', initializeAudioContext, { once: true });
+    window.addEventListener('touchstart', initializeAudioContext, { once: true });
+
+    function toggleGlobalAudio() {
+        globalAudioEnabled = !globalAudioEnabled;
+        const icon = document.getElementById('global-tts-icon');
+        const status = document.getElementById('global-tts-status');
+
+        if (globalAudioEnabled) {
+            icon.className = 'fa-solid fa-volume-high text-blue-300 text-lg sm:text-base';
+            status.innerText = 'US Voice On';
+            showToast('Speech synthesis enabled', 'success');
+        } else {
+            icon.className = 'fa-solid fa-volume-xmark text-slate-400 text-lg sm:text-base';
+            status.innerText = 'US Voice Off';
+            showToast('Speech synthesis disabled', 'info');
+        }
+    }
+
+    function flipCard(cardElement) {
+      const inner = cardElement.querySelector('.transform-style-3d');
+      if (inner.style.transform === 'rotateY(180deg)') {
+        inner.style.transform = 'rotateY(0deg)';
+      } else {
+        inner.style.transform = 'rotateY(180deg)';
+      }
+    }
+
+    function showToast(message, type = 'info') {
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-msg');
+        const toastIcon = document.getElementById('toast-icon');
+
+        toastMsg.innerText = message;
+
+        if (type === 'success') {
+            toast.className = 'fixed bottom-6 right-6 left-6 sm:left-auto z-50 px-6 py-4 rounded-xl shadow-2xl font-bold text-sm sm:text-base flex items-center gap-3 border bg-emerald-900/95 text-emerald-100 border-emerald-500 transition-all duration-300 opacity-100 translate-y-0';
+            toastIcon.className = 'fa-solid fa-circle-check text-emerald-400 text-xl shrink-0';
+        } else if (type === 'error') {
+            toast.className = 'fixed bottom-6 right-6 left-6 sm:left-auto z-50 px-6 py-4 rounded-xl shadow-2xl font-bold text-sm sm:text-base flex items-center gap-3 border bg-rose-900/95 text-rose-100 border-rose-500 transition-all duration-300 opacity-100 translate-y-0';
+            toastIcon.className = 'fa-solid fa-triangle-exclamation text-rose-400 text-xl shrink-0';
+        } else {
+            toast.className = 'fixed bottom-6 right-6 left-6 sm:left-auto z-50 px-6 py-4 rounded-xl shadow-2xl font-bold text-sm sm:text-base flex items-center gap-3 border bg-slate-900/95 text-slate-100 border-slate-600 transition-all duration-300 opacity-100 translate-y-0';
+            toastIcon.className = 'fa-solid fa-circle-info text-blue-400 text-xl shrink-0';
+        }
+
+        setTimeout(() => {
+            toast.className = toast.className.replace('opacity-100 translate-y-0', 'opacity-0 translate-y-24 pointer-events-none');
+        }, 3500);
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-blue-600', 'text-blue-600');
+        btn.classList.add('border-transparent', 'hover:text-blue-600');
+      });
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      document.getElementById(`tab-${tabId}`).classList.add('border-blue-600', 'text-blue-600');
+      document.getElementById(`tab-${tabId}`).classList.remove('border-transparent');
+      document.getElementById(`content-${tabId}`).classList.remove('hidden');
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window) || !globalAudioEnabled) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.9;
+      const voices = window.speechSynthesis.getVoices();
+      const usVoice = voices.find(v => v.lang === 'en-US' || v.lang.includes('en_US'));
+      if (usVoice) utterance.voice = usVoice;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // 12 SCENARIOS: ADVANCED ADJECTIVES (B1+/B2+) WITH SHUFFLED OPTIONS
+    const quizData = [
+      {
+        scenario: "Scenario 1: Describing a modern corporate facility using a compound adjective.",
+        prompt: "Choose the correct advanced sentence:",
+        options: [
+          { text: "Our company headquarters feature state-of-the-art technology.", correct: true, explanation: "Correct! 'State-of-the-art' is the correct compound adjective for modern technology." },
+          { text: "Our headquarters feature state of art technology.", correct: false, explanation: "Incorrect. Missing hyphens and required article." },
+          { text: "Our headquarters feature a modern state technology.", correct: false, explanation: "Incomplete compound expression." },
+          { text: "Our headquarters feature state-of-arts tech.", correct: false, explanation: "Plural error inside compound." }
+        ],
+        audio: "Our company headquarters feature state-of-the-art technology."
+      },
+      {
+        scenario: "Scenario 2: Describing an intellectually stimulating seminar presentation.",
+        prompt: "Choose the correct advanced sentence:",
+        options: [
+          { text: "The guest speaker delivered a thought-provoking lecture.", correct: true, explanation: "Correct! 'Thought-provoking' correctly modifies lecture." },
+          { text: "The guest speaker delivered a thinking-provoke lecture.", correct: false, explanation: "Incorrect morphology." },
+          { text: "The guest speaker delivered a thought provoking lecture.", correct: false, explanation: "Missing required hyphen." },
+          { text: "The guest speaker delivered a thoughtly lecture.", correct: false, explanation: "Invalid word." }
+        ],
+        audio: "The guest speaker delivered a thought-provoking lecture."
+      },
+      {
+        scenario: "Scenario 3: Using an extreme adjective with the correct absolute intensifier.",
+        prompt: "Choose the correct sentence:",
+        options: [
+          { text: "After a ten-hour flight, the delegates were absolutely exhausted.", correct: true, explanation: "Correct! Extreme adjectives like 'exhausted' take 'absolutely'." },
+          { text: "After a ten-hour flight, the delegates were very exhausted.", correct: false, explanation: "Incorrect. 'Very' cannot modify non-gradable extreme adjectives." },
+          { text: "After a ten-hour flight, the delegates were a bit exhausted.", correct: false, explanation: "Contradicts the severity of a ten-hour flight context." },
+          { text: "After a ten-hour flight, the delegates were much exhausted.", correct: false, explanation: "Grammatically incorrect modifier." }
+        ],
+        audio: "After a ten-hour flight, the delegates were absolutely exhausted."
+      },
+      {
+        scenario: "Scenario 4: Describing a corporate environment with rapid changes.",
+        prompt: "Choose the correct compound adjective sentence:",
+        options: [
+          { text: "Working in a fast-paced environment requires flexibility.", correct: true, explanation: "Correct! 'Fast-paced' correctly describes dynamic corporate settings." },
+          { text: "Working in a fast pace environment requires flexibility.", correct: false, explanation: "Incorrect noun adjunct structure without hyphen." },
+          { text: "Working in a faster-pace environment requires flexibility.", correct: false, explanation: "Incorrect comparative form." },
+          { text: "Working in a fastly pacing environment requires flexibility.", correct: false, explanation: "Awkward and ungrammatical." }
+        ],
+        audio: "Working in a fast-paced environment requires flexibility."
+      },
+      {
+        scenario: "Scenario 5: Expressing strong enthusiasm about a documentary using an extreme adjective.",
+        prompt: "Choose the correct sentence:",
+        options: [
+          { text: "The historical documentary about ancient Rome was utterly fascinating.", correct: true, explanation: "Correct! 'Utterly fascinating' pairs an extreme adjective with an absolute intensifier." },
+          { text: "The historical documentary was very fascinating.", correct: false, explanation: "Incorrect modifier ('very' cannot precede 'fascinating')." },
+          { text: "The historical documentary was a little bit fascinating.", correct: false, explanation: "Weakens the intended extreme adjective meaning." },
+          { text: "The historical documentary was much fascinating.", correct: false, explanation: "Grammar error." }
+        ],
+        audio: "The historical documentary about ancient Rome was utterly fascinating."
+      },
+      {
+        scenario: "Scenario 6: Referring to a widely recognized industry professional.",
+        prompt: "Choose the correct sentence:",
+        options: [
+          { text: "She consulted a well-known expert in international law.", correct: true, explanation: "Correct! 'Well-known' is the proper hyphenated compound adjective." },
+          { text: "She consulted a good known expert in international law.", correct: false, explanation: "Incorrect lexical collocation." },
+          { text: "She consulted a well known expert without hyphens.", correct: false, explanation: "Compound adjectives preceding nouns require hyphens." },
+          { text: "She consulted a best known expert.", correct: false, explanation: "Superlative mismatch." }
+        ],
+        audio: "She consulted a well-known expert in international law."
+      },
+      {
+        scenario: "Scenario 7: Describing a positive business forecast.",
+        prompt: "Choose the correct sentence with an advanced modifier:",
+        options: [
+          { text: "The economic outlook for the third quarter looks remarkably promising.", correct: true, explanation: "Correct! 'Remarkably promising' demonstrates high-level lexical precision." },
+          { text: "The economic outlook looks remark promising.", correct: false, explanation: "Incorrect adjective-adverb form." },
+          { text: "The economic outlook looks promise very.", correct: false, explanation: "Grammatically flawed." },
+          { text: "The economic outlook looks promise remarkably.", correct: false, explanation: "Incorrect word order." }
+        ],
+        audio: "The economic outlook for the third quarter looks remarkably promising."
+      },
+      {
+        scenario: "Scenario 8: Describing a common misconception.",
+        prompt: "Choose the correct sentence:",
+        options: [
+          { text: "It is a widespread belief that digital transformation is easy.", correct: true, explanation: "Correct! 'Widespread' correctly modifies 'belief'." },
+          { text: "It is a wide spread belief.", correct: false, explanation: "Incorrect spelling/hyphenation for preceding adjective." },
+          { text: "It is widely belief.", correct: false, explanation: "Part of speech error." },
+          { text: "It is spreading wide belief.", correct: false, explanation: "Incorrect participle structure." }
+        ],
+        audio: "It is a widespread belief that digital transformation is easy."
+      },
+      {
+        scenario: "Scenario 9: Describing breathtaking architecture.",
+        prompt: "Choose the correct sentence:",
+        options: [
+          { text: "The mountain landscape from the summit was breathtaking.", correct: true, explanation: "Correct! 'Breathtaking' describes stunning visual impact." },
+          { text: "The mountain landscape from the summit was breathe-taking.", correct: false, explanation: "Incorrect hyphenation of single-word adjective." },
+          { text: "The mountain landscape was very breathtaking.", correct: false, explanation: "Non-gradable extreme adjective." },
+          { text: "The mountain landscape was breath took.", correct: false, explanation: "Past tense verb error." }
+        ],
+        audio: "The mountain landscape from the summit was breathtaking."
+      },
+      {
+        scenario: "Scenario 10: Requesting a comprehensive research document.",
+        prompt: "Choose the correct professional sentence:",
+        options: [
+          { text: "We require a comprehensive analysis of market trends.", correct: true, explanation: "Correct! 'Comprehensive' denotes thorough and complete scope." },
+          { text: "We require a comprehend analysis of market trends.", correct: false, explanation: "Incorrect verb form instead of adjective." },
+          { text: "We require a comprehensiveness analysis.", correct: false, explanation: "Incorrect noun form." },
+          { text: "We require a comprehending analysis.", correct: false, explanation: "Meaning mismatch." }
+        ],
+        audio: "We require a comprehensive analysis of market trends."
+      },
+      {
+        scenario: "Scenario 11: Acknowledging invaluable professional support.",
+        prompt: "Choose the correct sentence:",
+        options: [
+          { text: "Her mentorship provided invaluable guidance during the project.", correct: true, explanation: "Correct! 'Invaluable' means extremely precious or useful." },
+          { text: "Her mentorship provided unvaluable guidance.", correct: false, explanation: "Incorrect prefix." },
+          { text: "Her mentorship provided valuable without price.", correct: false, explanation: "Unnatural expression." },
+          { text: "Her mentorship provided valueless guidance.", correct: false, explanation: "'Valueless' means worthless, the exact opposite of invaluable." }
+        ],
+        audio: "Her mentorship provided invaluable guidance during the project."
+      },
+      {
+        scenario: "Scenario 12: Addressing ambiguous market data.",
+        prompt: "Choose the correct sentence:",
+        options: [
+          { text: "The initial survey results remain somewhat ambiguous.", correct: true, explanation: "Correct! 'Ambiguous' describes unclear or open-to-interpretation data." },
+          { text: "The initial survey results remain ambiguity.", correct: false, explanation: "Noun error after linking verb." },
+          { text: "The initial survey results remain ambiguously.", correct: false, explanation: "Adverb error after linking verb 'remain'." },
+          { text: "The initial survey results remain ambiguate.", correct: false, explanation: "Invalid verb form." }
+        ],
+        audio: "The initial survey results remain somewhat ambiguous."
+      }
+    ];
+
+    let currentQuestionIdx = 0;
+    let currentScore = 0;
+    let isRecording = false;
+    let recognition = null;
+    let finalTranscript = '';
+
+    function shuffleArray(array) {
+      let currentIndex = array.length, randomIndex;
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+      }
+      return array;
+    }
+
+    function renderQuestion() {
+      const current = quizData[currentQuestionIdx];
+      document.getElementById('quiz-progress-text').innerText = `Question ${currentQuestionIdx + 1} of ${quizData.length}`;
+      document.getElementById('scenario-box').innerText = current.scenario;
+      document.getElementById('prompt-box').innerText = current.prompt;
+      document.getElementById('target-phrase-text').innerText = `"${current.audio}"`;
+
+      const grid = document.getElementById('options-grid');
+      grid.innerHTML = '';
+
+      let shuffledOptions = shuffleArray([...current.options]);
+
+      shuffledOptions.forEach((opt) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn w-full text-left p-4 sm:p-5 rounded-xl border-2 border-slate-200 hover:border-blue-500 bg-white text-xs sm:text-base text-slate-800 font-medium transition-all focus:outline-none active:scale-[0.98] touch-manipulation leading-snug';
+        btn.innerText = opt.text;
+        btn.onclick = () => selectOption(opt, shuffledOptions);
+        grid.appendChild(btn);
+      });
+
+      document.getElementById('explanation-box').classList.add('hidden');
+      document.getElementById('btn-next').classList.add('hidden');
+      if (isRecording) stopRecording();
+      resetSpeechUI();
+    }
+
+    function selectOption(selectedOpt, shuffledOptions) {
+      const buttons = document.querySelectorAll('.opt-btn');
+
+      buttons.forEach((btn) => {
+        btn.disabled = true;
+        btn.classList.remove('hover:border-blue-500');
+
+        let matchedOpt = shuffledOptions.find(o => o.text === btn.innerText);
+        if (matchedOpt && matchedOpt.correct) {
+          btn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+        } else if (btn.innerText === selectedOpt.text && !selectedOpt.correct) {
+          btn.classList.add('bg-rose-50', 'border-rose-500', 'text-rose-900');
+        }
+      });
+
+      if (selectedOpt.correct) currentScore++;
+
+      document.getElementById('score-badge').innerText = `Score: ${currentScore} / ${quizData.length}`;
+
+      const expBox = document.getElementById('explanation-box');
+      expBox.innerHTML = `<strong>${selectedOpt.correct ? '✓ Correct!' : '✗ Incorrect.'}</strong> ${selectedOpt.explanation}`;
+      expBox.classList.remove('hidden');
+
+      const nextBtn = document.getElementById('btn-next');
+      if (currentQuestionIdx < quizData.length - 1) {
+        nextBtn.innerHTML = 'Next Scenario <i class="fa-solid fa-arrow-right"></i>';
+      } else {
+        nextBtn.innerText = "View Final Results";
+      }
+      nextBtn.classList.remove('hidden');
+    }
+
+    function nextQuestion() {
+      currentQuestionIdx++;
+      if (currentQuestionIdx < quizData.length) {
+        renderQuestion();
+      } else {
+        showFinalResults();
+      }
+    }
+
+    function showFinalResults() {
+      const cardBody = document.getElementById('quiz-card-body');
+      cardBody.innerHTML = `
+        <div class="text-center py-10 space-y-5">
+          <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-4xl font-bold shadow-inner">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Advanced Lesson Completed Successfully</h3>
+          <p class="text-slate-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
+            You completed the advanced opposing adjectives lesson with a score of <strong class="text-blue-600 text-lg">${currentScore} / ${quizData.length}</strong>.
+          </p>
+          <button onclick="resetQuiz()" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm sm:text-base py-3.5 px-8 rounded-xl transition-all shadow-lg active:scale-95 touch-manipulation">
+            Restart Lesson
+          </button>
+        </div>
+      `;
+      if (typeof confetti === 'function') {
+          confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      }
+    }
+
+    function resetQuiz() {
+      currentQuestionIdx = 0;
+      currentScore = 0;
+      document.getElementById('score-badge').innerText = `Score: 0 / ${quizData.length}`;
+      location.reload();
+    }
+
+    function playCurrentAudio() {
+      speakText(quizData[currentQuestionIdx].audio);
+    }
+
+    // ================= WEB SPEECH API & RECOGNITION SYSTEM =================
+    function setupSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        document.getElementById('mic-status').innerText = "Your browser does not support native speech recognition (Chrome/Edge recommended).";
+        document.getElementById('mic-btn').disabled = true;
+        return;
+      }
+    }
+
+    function toggleSpeechRecording() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) return;
+
+      if (isRecording) {
+        stopRecording();
+        return;
+      }
+
+      recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = true;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => {
+        isRecording = true;
+        finalTranscript = '';
+        document.getElementById('transcript-box').innerHTML = "<span class='text-cyan-400'>Listening... speak naturally.</span>";
+        
+        const micBtn = document.getElementById('mic-btn');
+        micBtn.className = "w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-rose-600 to-rose-400 text-white flex items-center justify-center shadow-xl shadow-rose-500/30 transition-all transform pulse-mic active:scale-95 touch-manipulation";
+        document.getElementById('mic-icon').className = "fa-solid fa-stop text-3xl";
+        document.getElementById('mic-status').innerText = "Recording... Tap again to stop and evaluate.";
+        
+        document.getElementById('feedback-box').classList.add('hidden');
+      };
+
+      recognition.onresult = (event) => {
+        if (event.results.length === 0) return;
+        
+        let currentInterim = '';
+        let currentFinal = '';
+        
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            currentFinal += event.results[i][0].transcript;
+          } else {
+            currentInterim += event.results[i][0].transcript;
+          }
+        }
+        
+        if (currentFinal) {
+          finalTranscript += currentFinal + ' ';
+        }
+        
+        let displayString = (finalTranscript + currentInterim).trim();
+        
+        let words = displayString.split(/\s+/);
+        let deduped = [];
+        for (let i = 0; i < words.length; i++) {
+          if (i === 0 || words[i].toLowerCase() !== words[i-1].toLowerCase()) {
+            deduped.push(words[i]);
+          }
+        }
+        displayString = deduped.join(' ');
+        
+        document.getElementById('transcript-box').innerHTML = displayString ? `<span class="text-white">"${displayString}"</span>` : "<span class='text-cyan-400'>Listening...</span>";
+        
+        if (displayString) {
+          evaluateSpeech(displayString);
+        }
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Speech Recognition Error:", event.error);
+        if(event.error === 'no-speech'){
+          document.getElementById('mic-status').innerText = "No speech detected. Try again.";
+        } else if(event.error === 'not-allowed') {
+          document.getElementById('mic-status').innerText = "Microphone access denied. Please allow permissions.";
+        }
+        stopRecordingUI();
+      };
+
+      recognition.onend = () => {
+        isRecording = false;
+        stopRecordingUI();
+      };
+      
+      try { 
+        recognition.start(); 
+      } catch (e) { 
+        stopRecordingUI(); 
+      }
+    }
+
+    function stopRecording() {
+      isRecording = false;
+      try { 
+        if(recognition) recognition.stop(); 
+      } catch (e) {}
+      stopRecordingUI();
+    }
+    
+    function stopRecordingUI(){
+      isRecording = false;
+      const micBtn = document.getElementById('mic-btn');
+      micBtn.className = "w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-rose-600 hover:bg-rose-500 text-white flex items-center justify-center shadow-lg transition-all transform active:scale-95 touch-manipulation";
+      document.getElementById('mic-icon').className = "fa-solid fa-microphone text-3xl sm:text-4xl";
+      
+      const transcript = document.getElementById('transcript-box').innerText.replace(/"/g, '');
+      if(!transcript || transcript.includes('Listening...') || transcript.includes('Your transcribed speech')){
+          document.getElementById('mic-status').innerText = "Tap the microphone to record";
+      } else {
+          document.getElementById('mic-status').innerText = "Recording evaluated successfully. Tap to try again.";
+          const scoreText = document.getElementById('feedback-score').innerText;
+          const scoreVal = parseInt(scoreText.replace('%', ''));
+          if (!isNaN(scoreVal) && scoreVal >= 75 && typeof confetti === 'function') {
+              confetti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
+          }
+      }
+    }
+
+    function resetSpeechUI() {
+      if (isRecording) stopRecording();
+      document.getElementById('transcript-box').innerHTML = "<span class='text-slate-500'>Your transcribed speech will appear here in real time...</span>";
+      document.getElementById('feedback-box').classList.add('hidden');
+    }
+
+    function evaluateSpeech(userTranscript) {
+      if (!userTranscript || userTranscript.trim() === '') return;
+      
+      const target = quizData[currentQuestionIdx].audio;
+      const cleanTarget = target.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+      const cleanSpoken = userTranscript.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
+
+      const numMap = {'1':'one','2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine','10':'ten','11':'eleven','12':'twelve'};
+      
+      let targetWords = cleanTarget.split(/\s+/).map(w => numMap[w] || w);
+      let spokenWords = cleanSpoken.split(/\s+/).map(w => numMap[w] || w);
+
+      let matchedCount = 0;
+      
+      targetWords.forEach(tWord => {
+          let matchIndex = spokenWords.findIndex(sWord => {
+              if (sWord === tWord) return true;
+              if (Math.abs(sWord.length - tWord.length) > 2) return false;
+              
+              let m = [], i, j;
+              for(i=0; i<=sWord.length; i++) m[i] = [i];
+              for(j=0; j<=tWord.length; j++) m[0][j] = j;
+              for(i=1; i<=sWord.length; i++) {
+                  for(j=1; j<=tWord.length; j++) {
+                      m[i][j] = sWord.charAt(i-1) === tWord.charAt(j-1) ? 
+                          m[i-1][j-1] : 
+                          Math.min(m[i-1][j-1]+1, m[i][j-1]+1, m[i-1][j]+1);
+                  }
+              }
+              let dist = m[sWord.length][tWord.length];
+              return (tWord.length <= 4 && dist <= 1) || (tWord.length > 4 && dist <= 2);
+          });
+          
+          if (matchIndex !== -1) {
+              matchedCount++;
+              spokenWords.splice(matchIndex, 1);
+          }
+      });
+
+      let score = Math.round((matchedCount / targetWords.length) * 100);
+      if (cleanSpoken === cleanTarget) score = 100;
+      if (score > 100) score = 100;
+      
+      if (cleanSpoken.includes(cleanTarget) || cleanTarget.includes(cleanSpoken)) score = Math.max(score, 80);
+      if (score < 40 && cleanSpoken.length > 5) score = 60; 
+
+      const feedbackBox = document.getElementById('feedback-box');
+      const feedbackTitle = document.getElementById('feedback-title');
+      const feedbackScore = document.getElementById('feedback-score');
+      const feedbackText = document.getElementById('feedback-text');
+
+      feedbackBox.classList.remove('hidden', 'bg-emerald-950/80', 'border-emerald-500', 'bg-amber-950/80', 'border-amber-500', 'bg-rose-950/80', 'border-rose-500');
+
+      feedbackScore.innerText = `${score}%`;
+
+      if (score >= 75) {
+        feedbackBox.classList.add('bg-emerald-950/80', 'border-emerald-500');
+        feedbackTitle.className = "text-xs font-bold uppercase tracking-wide flex items-center gap-1.5 text-emerald-400";
+        feedbackText.className = "text-xs text-emerald-200";
+        feedbackText.innerHTML = "<strong>Outstanding pronunciation!</strong> Your command of advanced adjectives is impressive.";
+      } else if (score >= 45) {
+        feedbackBox.classList.add('bg-amber-950/80', 'border-amber-500');
+        feedbackTitle.className = "text-xs font-bold uppercase tracking-wide flex items-center gap-1.5 text-amber-400";
+        feedbackText.className = "text-xs text-amber-200";
+        feedbackText.innerHTML = "<strong>Good effort!</strong> Your voice was clear. Practice pacing and articulation.";
+      } else {
+        feedbackBox.classList.add('bg-rose-950/80', 'border-rose-500');
+        feedbackTitle.className = "text-xs font-bold uppercase tracking-wide flex items-center gap-1.5 text-rose-400";
+        feedbackText.className = "text-xs text-rose-200";
+        feedbackText.innerHTML = "<strong>Keep practicing.</strong> Listen to the native audio reference and try again.";
+      }
+    }
+
+    renderQuestion();
+    setupSpeechRecognition();
+  </script>
+</body>
+</html>
