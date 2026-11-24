@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Super Lección Neural A1 — Present Simple | By Coach Carlos O.</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 50%, #fdf2f8 100%);
+      color: #0f172a;
+      touch-action: manipulation;
+    }
+    button, select, input, textarea {
+      touch-action: manipulation;
+    }
+    input[type="text"], textarea, select {
+      font-size: 16px !important; /* Prevents iOS Safari auto-zoom on focus */
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .pink-status-col {
+      background-color: #ffe4e6;
+      border-color: #fda4af;
+      color: #9f1239;
+      transition: all 0.25s ease;
+    }
+    .pink-status-col.is-correct {
+      background-color: #dcfce7;
+      border-color: #22c55e;
+      color: #166534;
+    }
+    .pink-status-col.is-wrong {
+      background-color: #fee2e2;
+      border-color: #ef4444;
+      color: #991b1b;
+    }
+    .speaking-pulse {
+      animation: pulseRing 1.4s infinite;
+    }
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white/95 backdrop-blur border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+      <div class="flex items-center justify-between gap-2.5">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-gradient-to-br from-indigo-600 to-rose-500 text-white flex items-center justify-center font-extrabold text-base sm:text-lg shadow-sm">
+            A1
+          </div>
+          <div class="min-w-0">
+            <h1 class="text-sm sm:text-lg font-extrabold text-slate-900 leading-tight truncate">
+              Super Lección Neural A1 — Present Simple
+            </h1>
+            <p class="text-[11px] sm:text-xs text-slate-500 font-medium truncate">
+              EasyEnglish Education • By Coach Carlos O.
+            </p>
+          </div>
+        </div>
+        <div class="sm:hidden shrink-0 bg-indigo-50 border border-indigo-200 px-2.5 py-1 rounded-lg text-xs font-bold text-indigo-700">
+          <span id="global-score-mobile">0</span>/<span id="global-total-mobile">18</span>
+        </div>
+      </div>
+
+      <!-- Global TTS & Progress Controls -->
+      <div class="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto">
+        <div class="flex items-center gap-1.5 bg-slate-100 px-2.5 py-1.5 rounded-xl border border-slate-200 flex-1 sm:flex-initial min-w-0">
+          <span class="text-xs font-semibold text-slate-600 shrink-0">🇺🇸</span>
+          <select id="voice-select" aria-label="Select Voice" class="bg-transparent font-medium text-slate-800 focus:outline-none truncate flex-1 sm:max-w-[140px] min-h-[32px]"></select>
+          <select id="rate-select" aria-label="Select Speech Rate" class="bg-white border border-slate-200 rounded-lg px-1.5 py-0.5 font-semibold text-slate-700 shrink-0 min-h-[32px]">
+            <option value="0.75">0.75x</option>
+            <option value="0.9" selected>1.0x</option>
+            <option value="1.1">1.1x</option>
+          </select>
+        </div>
+        <div class="hidden sm:block bg-indigo-50 border border-indigo-200 px-3 py-2 rounded-xl text-xs font-bold text-indigo-700 shrink-0">
+          Mastery: <span id="global-score">0</span> / <span id="global-total">18</span>
+        </div>
+        <button id="reset-progress-btn" type="button" class="text-xs font-semibold px-3 py-2 min-h-[40px] rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 active:scale-95 transition shrink-0">
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <!-- Module Tabs -->
+    <nav class="max-w-6xl mx-auto px-3 sm:px-4 pb-2.5 flex gap-2 overflow-x-auto no-scrollbar" id="module-tabs" aria-label="Grammar Modules"></nav>
+  </header>
+
+  <!-- Toast Banner -->
+  <div id="toast-banner" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 z-50 hidden sm:max-w-sm bg-slate-900 text-white text-sm font-medium px-4 py-3 rounded-xl shadow-lg text-center sm:text-left"></div>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-3 sm:px-4 py-4 sm:py-6 flex-1 space-y-5 sm:space-y-6" id="app-main"></main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white/80 py-4 px-3 text-center text-xs text-slate-500">
+    © Desarrollado para excelencia educativa por Coach Carlos O • EasyEnglish Education (CEFR A1)
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const STORAGE_KEY = 'super_leccion_neural_a1_present_simple_v3';
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      const MODULES = [
+        {
+          id: 'statements',
+          num: 1,
+          shortTitle: '1. Statements: People & Jobs',
+          title: 'Module 1: Present Simple — Introducing People and Describing Jobs',
+          cefrTag: 'A1 Core Grammar & Workplace',
+          meaning: 'We use the Present Simple to talk about routines, facts, jobs, and permanent situations. With he, she, and it (or one person/name), we add -s or -es to the verb (and "have" becomes "has").',
+          structure: 'I / You / We / They + base verb  |  He / She / It + verb + -s / -es (have → has; be → is)',
+          neuralTip: 'Third-Person S-Anchor: Whenever the subject is one person (Rob, Karen, Jenny, Daniel, Karen\'s sister), activate the final "-s" sound clearly!',
+          examples: [
+            { en: 'Rob works in London.', note: 'He / Rob → verb + -s (works)' },
+            { en: 'Karen is an administrator.', note: 'Verb "be" with singular subject → is' },
+            { en: 'Jenny lives in Manhattan.', note: 'She / Jenny → verb + -s (lives)' },
+            { en: 'Daniel has meetings at work.', note: 'Irregular third-person singular: have → has' },
+            { en: 'Rob introduces Jenny to Karen at the office.', note: 'Verb ending in -ce → adds -s (introduces)' },
+            { en: 'Karen\'s sister lives in Brooklyn.', note: 'Singular noun (Karen\'s sister = she) → lives' },
+            { en: 'I work in a modern office in New York.', note: 'Subject "I" → base verb without -s' },
+            { en: 'We have team meetings every Monday morning.', note: 'Subject "We" → base verb "have"' },
+            { en: 'They live near the central train station.', note: 'Subject "They" → base verb without -s' }
+          ],
+          exercises: [
+            {
+              id: 's1',
+              prompt: 'Complete the sentence: "Karen __________ (work) in the London office."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['works'],
+              hint: 'Karen = she (third-person singular). Add -s to the base verb.',
+              displayAnswer: 'works'
+            },
+            {
+              id: 's2',
+              prompt: 'Complete the sentence: "Jenny __________ (live) in New York."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['lives'],
+              hint: 'Jenny = she (third-person singular). Add -s to the verb ending in -e.',
+              displayAnswer: 'lives'
+            },
+            {
+              id: 's3',
+              prompt: 'Complete the sentence: "Rob __________ (introduce) Jenny to Karen."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['introduces'],
+              hint: 'Rob = he (third-person singular). Add -s to the verb.',
+              displayAnswer: 'introduces'
+            },
+            {
+              id: 's4',
+              prompt: 'Complete the sentence: "Daniel __________ (have) a meeting at twelve."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['has'],
+              hint: 'Daniel = he. Remember the irregular third-person singular form of "have".',
+              displayAnswer: 'has'
+            },
+            {
+              id: 's5',
+              prompt: 'Complete the sentence: "Karen\'s sister __________ (live) in Brooklyn."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['lives'],
+              hint: '"Karen\'s sister" is one person (she), so the verb needs third-person singular -s.',
+              displayAnswer: 'lives'
+            },
+            {
+              id: 's6',
+              prompt: 'Complete the sentence: "Karen __________ (be) an administrator in London."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['is'],
+              hint: 'Use the third-person singular form of the verb "be" (am / is / are).',
+              displayAnswer: 'is'
+            },
+            {
+              id: 's7',
+              prompt: 'Complete the sentence: "Rob and Karen __________ (work) for the same company."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['work'],
+              hint: '"Rob and Karen" = they (plural subject). Do NOT add -s.',
+              displayAnswer: 'work'
+            },
+            {
+              id: 's8',
+              prompt: 'Complete the sentence: "Jenny __________ (have) an apartment in Manhattan."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['has'],
+              hint: 'Jenny = she. Use the irregular singular form of "have".',
+              displayAnswer: 'has'
+            },
+            {
+              id: 's9',
+              prompt: 'Complete the sentence: "I __________ (live) in London, and my colleague lives in New York."',
+              placeholder: 'Type the correct verb form...',
+              answers: ['live'],
+              hint: 'With the subject "I", use the base form of the verb without -s.',
+              displayAnswer: 'live'
+            }
+          ],
+          speakingItems: [
+            {
+              id: 'stmt_sp1',
+              text: 'Rob works in London, and Karen is an administrator in the London office.',
+              keywords: ['rob', 'works', 'london', 'karen', 'administrator', 'office']
+            },
+            {
+              id: 'stmt_sp2',
+              text: 'Jenny lives in Manhattan, and Karen\'s sister lives in Brooklyn.',
+              keywords: ['jenny', 'lives', 'manhattan', 'sister', 'brooklyn']
+            },
+            {
+              id: 'stmt_sp3',
+              text: 'Rob introduces Jenny to Karen before the afternoon meeting.',
+              keywords: ['rob', 'introduces', 'jenny', 'karen', 'meeting']
+            },
+            {
+              id: 'stmt_sp4',
+              text: 'Daniel has a meeting at twelve o\'clock in the main conference room.',
+              keywords: ['daniel', 'has', 'meeting', 'twelve', 'room']
+            },
+            {
+              id: 'stmt_sp5',
+              text: 'I work in an international office, and we have meetings every day.',
+              keywords: ['work', 'international', 'office', 'have', 'meetings', 'day']
+            }
+          ],
+          speakingPrompt: 'Listen to the American English narrator and read all 5 A1 sentences aloud to practice third-person "-s" and "has".'
+        },
+        {
+          id: 'questions',
+          num: 2,
+          shortTitle: '2. Questions: People & Places',
+          title: 'Module 2: Present Simple Questions — Asking About People and Places',
+          cefrTag: 'A1 Question Word Order',
+          meaning: 'We use questions with "do" and "does" to ask about habits, facts, and personal information. Notice that after "does", the main verb returns to its base form (no -s!).',
+          structure: '(Question Word) + Do + I/you/we/they + base verb?  |  (Question Word) + Does + he/she/it + base verb?',
+          neuralTip: 'Magnet Rule: "Does" steals the "-s" from the main verb! Always say "Where does she live?" — never "Where does she lives?".',
+          examples: [
+            { en: 'Where do you live?', note: 'Wh-word + do + you + base verb' },
+            { en: 'Do you know New York?', note: 'Yes/No question: Do + you + base verb' },
+            { en: 'Where does your sister live?', note: 'Wh-word + does + singular subject + base verb' },
+            { en: 'Does Karen work in London?', note: 'Yes/No question: Does + Karen + base verb' },
+            { en: 'Where does Karen work?', note: 'Wh-word + does + Karen + base verb' },
+            { en: 'Does Jenny have family in Poland?', note: 'Does + Jenny + base verb "have" (NOT "has")' },
+            { en: 'What do you do for a living?', note: 'Common A1 job question with "do"' },
+            { en: 'Does Rob live in Manhattan or London?', note: 'Choice question with "Does + Rob + live"' },
+            { en: 'Do they work in the same office?', note: 'Plural subject "they" → auxiliary "Do"' }
+          ],
+          exercises: [
+            {
+              id: 'q1',
+              prompt: 'Put the words in the correct order: "you / where / live / do?"',
+              placeholder: 'Type the complete question...',
+              answers: ['where do you live?', 'where do you live'],
+              hint: 'Word order: Question word + auxiliary (do) + subject + base verb + ?',
+              displayAnswer: 'Where do you live?'
+            },
+            {
+              id: 'q2',
+              prompt: 'Put the words in the correct order: "your sister / where / does / live?"',
+              placeholder: 'Type the complete question...',
+              answers: ['where does your sister live?', 'where does your sister live'],
+              hint: 'Word order: Question word + auxiliary (does) + singular subject + base verb + ?',
+              displayAnswer: 'Where does your sister live?'
+            },
+            {
+              id: 'q3',
+              prompt: 'Put the words in the correct order: "know / do / New York / you?"',
+              placeholder: 'Type the complete question...',
+              answers: ['do you know new york?', 'do you know new york'],
+              hint: 'Yes/No question order: Auxiliary (Do) + subject + base verb + object + ?',
+              displayAnswer: 'Do you know New York?'
+            },
+            {
+              id: 'q4',
+              prompt: 'Put the words in the correct order: "Karen / does / work / where?"',
+              placeholder: 'Type the complete question...',
+              answers: ['where does karen work?', 'where does karen work'],
+              hint: 'Start with the question word, followed by "does" + name + base verb.',
+              displayAnswer: 'Where does Karen work?'
+            },
+            {
+              id: 'q5',
+              prompt: 'Put the words in the correct order: "Jenny / does / have / family / in Poland?"',
+              placeholder: 'Type the complete question...',
+              answers: ['does jenny have family in poland?', 'does jenny have family in poland'],
+              hint: 'Yes/No question order: Does + subject + base verb (have) + object + place + ?',
+              displayAnswer: 'Does Jenny have family in Poland?'
+            },
+            {
+              id: 'q6',
+              prompt: 'Put the words in the correct order: "in London / Karen / work / does?"',
+              placeholder: 'Type the complete question...',
+              answers: ['does karen work in london?', 'does karen work in london'],
+              hint: 'Start with the third-person auxiliary + person + base verb + place.',
+              displayAnswer: 'Does Karen work in London?'
+            },
+            {
+              id: 'q7',
+              prompt: 'Put the words in the correct order: "Daniel / what time / have / does / a meeting?"',
+              placeholder: 'Type the complete question...',
+              answers: ['what time does daniel have a meeting?', 'what time does daniel have a meeting'],
+              hint: 'Start with the question phrase + does + subject + base verb + noun.',
+              displayAnswer: 'What time does Daniel have a meeting?'
+            },
+            {
+              id: 'q8',
+              prompt: 'Put the words in the correct order: "Rob / where / work / does?"',
+              placeholder: 'Type the complete question...',
+              answers: ['where does rob work?', 'where does rob work'],
+              hint: 'Question word + singular auxiliary + name + base verb.',
+              displayAnswer: 'Where does Rob work?'
+            },
+            {
+              id: 'q9',
+              prompt: 'Put the words in the correct order: "you / in Manhattan / live / do?"',
+              placeholder: 'Type the complete question...',
+              answers: ['do you live in manhattan?', 'do you live in manhattan'],
+              hint: 'Yes/No question: Auxiliary + subject + base verb + location.',
+              displayAnswer: 'Do you live in Manhattan?'
+            }
+          ],
+          speakingItems: [
+            {
+              id: 'ques_sp1',
+              text: 'Where do you live, and do you know New York?',
+              keywords: ['where', 'do', 'you', 'live', 'know', 'new', 'york']
+            },
+            {
+              id: 'ques_sp2',
+              text: 'Where does your sister live? Does she live in Brooklyn?',
+              keywords: ['where', 'does', 'your', 'sister', 'live', 'brooklyn']
+            },
+            {
+              id: 'ques_sp3',
+              text: 'Where does Karen work? Does she work in the London office?',
+              keywords: ['where', 'does', 'karen', 'work', 'london', 'office']
+            },
+            {
+              id: 'ques_sp4',
+              text: 'Does Jenny have family in Poland, or does her family live in New York?',
+              keywords: ['does', 'jenny', 'have', 'family', 'poland', 'live']
+            },
+            {
+              id: 'ques_sp5',
+              text: 'What time does Daniel have a meeting with Rob and Jenny?',
+              keywords: ['what', 'time', 'does', 'daniel', 'have', 'meeting']
+            }
+          ],
+          speakingPrompt: 'Practice asking all 5 Present Simple questions with natural rising or falling intonation.'
+        }
+      ];
+
+      let state = {
+        activeModuleId: 'statements',
+        answers: {},
+        revealed: {},
+        transcripts: {}
+      };
+
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed && typeof parsed === 'object') {
+            state = { ...state, ...parsed };
+            if (!state.revealed || typeof state.revealed !== 'object') {
+              state.revealed = {};
+            }
+          }
+        }
+      } catch (e) { /* sandbox safe */ }
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (e) { /* sandbox safe */ }
+      }
+
+      function showToast(msg) {
+        const el = document.getElementById('toast-banner');
+        el.textContent = msg;
+        el.classList.remove('hidden');
+        clearTimeout(showToast._timer);
+        showToast._timer = setTimeout(() => el.classList.add('hidden'), 3200);
+      }
+
+      // Unlock mobile audio context on first tap
+      let ttsUnlocked = false;
+      let currentUtterance = null;
+      function unlockMobileAudio() {
+        if (!ttsUnlocked && 'speechSynthesis' in window) {
+          const silent = new SpeechSynthesisUtterance('');
+          silent.volume = 0;
+          window.speechSynthesis.speak(silent);
+          ttsUnlocked = true;
+        }
+      }
+      window.addEventListener('click', unlockMobileAudio, { once: true });
+      window.addEventListener('touchstart', unlockMobileAudio, { once: true });
+
+      let availableVoices = [];
+      function populateVoices() {
+        const select = document.getElementById('voice-select');
+        if (!('speechSynthesis' in window)) {
+          select.innerHTML = '<option>TTS Unavailable</option>';
+          return;
+        }
+        const voices = window.speechSynthesis.getVoices() || [];
+        const usVoices = voices.filter(v => /en[-_]?US/i.test(v.lang));
+        const enVoices = usVoices.length ? usVoices : voices.filter(v => /^en/i.test(v.lang));
+        availableVoices = enVoices.length ? enVoices : voices;
+
+        select.innerHTML = '';
+        if (!availableVoices.length) {
+          const opt = document.createElement('option');
+          opt.textContent = 'en-US Default';
+          select.appendChild(opt);
+          return;
+        }
+        availableVoices.forEach((v, idx) => {
+          const opt = document.createElement('option');
+          opt.value = String(idx);
+          opt.textContent = v.name.replace(/Microsoft |Google /g, '');
+          if (/en[-_]?US/i.test(v.lang) && /natural|jenny|aria|guy|samantha|google us/i.test(v.name.toLowerCase())) {
+            opt.selected = true;
+          }
+          select.appendChild(opt);
+        });
+      }
+
+      if ('speechSynthesis' in window) {
+        populateVoices();
+        window.speechSynthesis.onvoiceschanged = populateVoices;
+      }
+
+      function speakText(text) {
+        if (!('speechSynthesis' in window)) {
+          showToast('Speech synthesis is not supported in this browser.');
+          return;
+        }
+        unlockMobileAudio();
+        window.speechSynthesis.cancel();
+        currentUtterance = new SpeechSynthesisUtterance(text);
+        currentUtterance.lang = 'en-US';
+        const voiceSelect = document.getElementById('voice-select');
+        const rateSelect = document.getElementById('rate-select');
+        const idx = parseInt(voiceSelect.value, 10);
+        if (!isNaN(idx) && availableVoices[idx]) {
+          currentUtterance.voice = availableVoices[idx];
+        }
+        currentUtterance.rate = parseFloat(rateSelect.value) || 0.9;
+        currentUtterance.onend = () => { currentUtterance = null; };
+        currentUtterance.onerror = () => { currentUtterance = null; };
+        window.speechSynthesis.speak(currentUtterance);
+      }
+
+      let activeRecognition = null;
+      let activeMicItemId = null;
+      let isRecordingActive = false;
+
+      function appendWithoutOverlap(baseText, additionText) {
+        const base = (baseText || '').trim();
+        const add = (additionText || '').trim();
+        if (!add) return base;
+        if (!base) return add;
+
+        if (base.toLowerCase().endsWith(add.toLowerCase())) return base;
+
+        const baseWords = base.split(/\s+/);
+        const addWords = add.split(/\s+/);
+        const maxOverlap = Math.min(baseWords.length, addWords.length, 6);
+
+        for (let len = maxOverlap; len >= 1; len--) {
+          const suffix = baseWords.slice(-len).join(' ').toLowerCase();
+          const prefix = addWords.slice(0, len).join(' ').toLowerCase();
+          if (suffix === prefix) {
+            return (base + ' ' + addWords.slice(len).join(' ')).trim();
+          }
+        }
+        return (base + ' ' + add).trim();
+      }
+
+      function stopActiveRecognition() {
+        isRecordingActive = false;
+        activeMicItemId = null;
+        if (activeRecognition) {
+          try { activeRecognition.stop(); } catch (e) {}
+          activeRecognition = null;
+        }
+      }
+
+      function normalizeText(str) {
+        return (str || '')
+          .toLowerCase()
+          .replace(/[’']/g, "'")
+          .replace(/[^a-z0-9'\s]/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function editDistance(a, b) {
+        const dp = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+        for (let j = 0; j <= b.length; j++) dp[0][j] = j;
+        for (let i = 1; i <= a.length; i++) {
+          for (let j = 1; j <= b.length; j++) {
+            dp[i][j] = a[i - 1] === b[j - 1]
+              ? dp[i - 1][j - 1]
+              : Math.min(dp[i - 1][j - 1] + 1, dp[i][j - 1] + 1, dp[i - 1][j] + 1);
+          }
+        }
+        return dp[a.length][b.length];
+      }
+
+      function evaluateSpeech(item, spokenText) {
+        const normSpoken = normalizeText(spokenText);
+        if (!normSpoken) {
+          return {
+            score: 0,
+            matched: [],
+            missing: item.keywords,
+            message: 'Speak into your microphone or type your spoken response to receive neural feedback.'
+          };
+        }
+        const spokenWords = normSpoken.split(' ');
+        const matched = item.keywords.filter(k => {
+          const kw = k.toLowerCase();
+          return spokenWords.some(sw => sw === kw || (kw.length >= 4 && Math.abs(sw.length - kw.length) <= 1 && editDistance(sw, kw) <= 1));
+        });
+        const missing = item.keywords.filter(k => !matched.includes(k));
+        let score = Math.round((matched.length / item.keywords.length) * 100);
+        if (score >= 80 && score < 100 && missing.length === 0) score = 100;
+
+        let message = '';
+        if (score >= 80) {
+          message = 'Great job! Your A1 Present Simple pronunciation and grammar markers were clearly recognized.';
+        } else if (score >= 50) {
+          message = 'Good effort! Try speaking these target words clearly: ' + missing.join(', ') + '.';
+        } else {
+          message = 'Keep practicing! Listen to the American English model again and focus on: ' + missing.join(', ') + '.';
+        }
+        return { score, matched, missing, message };
+      }
+
+      function toggleSpeechRecognition(item) {
+        const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRec) {
+          showToast('Live SpeechRecognition is unavailable here — type in the box and tap Evaluate!');
+          return;
+        }
+        if (isRecordingActive && activeMicItemId === item.id) {
+          stopActiveRecognition();
+          render();
+          return;
+        }
+        if (isRecordingActive) {
+          stopActiveRecognition();
+        }
+
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+        let committedText = (state.transcripts[item.id] || '').trim();
+        let sessionFinal = '';
+        let sessionInterim = '';
+
+        try {
+          const rec = new SpeechRec();
+          rec.lang = 'en-US';
+          // Android Chrome duplicates finalized segments when continuous=true; false with auto-restart prevents mobile duplication
+          rec.continuous = !isMobileDevice;
+          rec.interimResults = true;
+          activeRecognition = rec;
+          activeMicItemId = item.id;
+          isRecordingActive = true;
+          render();
+
+          rec.onresult = (event) => {
+            let rebuiltFinal = '';
+            let rebuiltInterim = '';
+            for (let i = 0; i < event.results.length; i++) {
+              const piece = event.results[i][0].transcript;
+              if (event.results[i].isFinal) {
+                rebuiltFinal = appendWithoutOverlap(rebuiltFinal, piece);
+              } else {
+                rebuiltInterim = appendWithoutOverlap(rebuiltInterim, piece);
+              }
+            }
+            sessionFinal = rebuiltFinal;
+            sessionInterim = rebuiltInterim;
+
+            let combined = committedText;
+            if (sessionFinal) combined = appendWithoutOverlap(combined, sessionFinal);
+            if (sessionInterim) combined = appendWithoutOverlap(combined, sessionInterim);
+
+            state.transcripts[item.id] = combined;
+            saveState();
+            const box = document.getElementById('transcript-box-' + item.id);
+            if (box) box.value = combined;
+            updateSpeechFeedbackDOM(item);
+          };
+
+          rec.onerror = (e) => {
+            if (e.error === 'not-allowed' || e.error === 'service-not-allowed') {
+              stopActiveRecognition();
+              showToast('Microphone access was blocked. Allow permissions or type in the box.');
+              render();
+            }
+          };
+
+          rec.onend = () => {
+            if (sessionFinal) {
+              committedText = appendWithoutOverlap(committedText, sessionFinal);
+              sessionFinal = '';
+            }
+            sessionInterim = '';
+            state.transcripts[item.id] = committedText;
+            saveState();
+
+            if (isRecordingActive && activeMicItemId === item.id) {
+              setTimeout(() => {
+                if (isRecordingActive && activeMicItemId === item.id) {
+                  try { rec.start(); } catch (err) { stopActiveRecognition(); render(); }
+                }
+              }, isMobileDevice ? 250 : 50);
+            } else {
+              stopActiveRecognition();
+              render();
+            }
+          };
+
+          rec.start();
+        } catch (err) {
+          stopActiveRecognition();
+          showToast('Could not start microphone. Type in the transcription box to evaluate.');
+          render();
+        }
+      }
+
+      function updateSpeechFeedbackDOM(item) {
+        const feedbackEl = document.getElementById('speech-feedback-' + item.id);
+        if (!feedbackEl) return;
+        const spoken = state.transcripts[item.id] || '';
+        const res = evaluateSpeech(item, spoken);
+        const isGood = res.score >= 80;
+        feedbackEl.className = 'mt-3 p-3.5 rounded-xl border text-sm transition ' +
+          (spoken ? (isGood ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : 'bg-amber-50 border-amber-300 text-amber-900') : 'bg-slate-50 border-slate-200 text-slate-600');
+        feedbackEl.innerHTML = `
+          <div class="flex items-center justify-between gap-2 font-bold mb-1">
+            <span>Neural Pronunciation &amp; Grammar Check</span>
+            <span>${res.score}% Match</span>
+          </div>
+          <p class="text-xs leading-relaxed">${res.message}</p>
+          ${res.matched.length ? `<div class="mt-2 flex flex-wrap gap-1">${res.matched.map(w => `<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold">✓ ${w}</span>`).join('')}</div>` : ''}
+        `;
+      }
+
+      function normalizeAnswer(str) {
+        return (str || '')
+          .toLowerCase()
+          .replace(/[’']/g, "'")
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function isAnswerUnlocked(exId) {
+        const entry = state.answers[exId];
+        return Boolean(
+          state.revealed[exId] ||
+          (entry && (entry.status === 'correct' || entry.status === 'wrong'))
+        );
+      }
+
+      function checkExercise(exId, mod) {
+        const ex = mod.exercises.find(e => e.id === exId);
+        if (!ex) return;
+        const input = document.getElementById('input-' + exId);
+        const val = input ? input.value : '';
+        const norm = normalizeAnswer(val);
+        const isCorrect = ex.answers.some(a => normalizeAnswer(a) === norm);
+
+        state.answers[exId] = {
+          value: val,
+          status: norm === '' ? 'idle' : (isCorrect ? 'correct' : 'wrong')
+        };
+        if (norm !== '') {
+          state.revealed[exId] = true;
+        }
+        saveState();
+        updateGlobalScore();
+        renderTabs();
+        renderExerciseRow(ex, mod);
+      }
+
+      function updateGlobalScore() {
+        const total = MODULES.reduce((sum, m) => sum + m.exercises.length, 0);
+        const correct = Object.values(state.answers).filter(a => a && a.status === 'correct').length;
+        document.getElementById('global-score').textContent = String(correct);
+        document.getElementById('global-total').textContent = String(total);
+        const mobScore = document.getElementById('global-score-mobile');
+        const mobTotal = document.getElementById('global-total-mobile');
+        if (mobScore) mobScore.textContent = String(correct);
+        if (mobTotal) mobTotal.textContent = String(total);
+      }
+
+      function renderTabs() {
+        const nav = document.getElementById('module-tabs');
+        nav.innerHTML = '';
+        MODULES.forEach(m => {
+          const doneCount = m.exercises.filter(e => state.answers[e.id]?.status === 'correct').length;
+          const active = m.id === state.activeModuleId;
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'whitespace-nowrap px-3.5 py-2.5 min-h-[42px] rounded-xl text-xs sm:text-sm font-bold transition active:scale-95 flex items-center gap-2 border shrink-0 ' +
+            (active
+              ? 'bg-indigo-600 text-white border-indigo-600 shadow-sm'
+              : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50');
+          btn.innerHTML = `<span>${m.shortTitle}</span><span class="px-1.5 py-0.5 rounded-md text-[11px] ${active ? 'bg-indigo-500 text-white' : 'bg-slate-100 text-slate-600'}">${doneCount}/${m.exercises.length}</span>`;
+          btn.addEventListener('click', () => {
+            stopActiveRecognition();
+            state.activeModuleId = m.id;
+            saveState();
+            render();
+          });
+          nav.appendChild(btn);
+        });
+      }
+
+      function renderExerciseRow(ex, mod) {
+        const card = document.getElementById('ex-card-' + ex.id);
+        if (!card) return;
+        const entry = state.answers[ex.id] || { value: '', status: 'idle' };
+        const unlocked = isAnswerUnlocked(ex.id);
+        const statusCol = card.querySelector('.pink-status-col');
+        const statusText = card.querySelector('.status-label');
+        const answerPanel = card.querySelector('.answer-reveal-box');
+        const audioBtn = card.querySelector('.speak-ex-btn');
+        const audioLabel = card.querySelector('.audio-lock-label');
+
+        statusCol.classList.remove('is-correct', 'is-wrong');
+        if (entry.status === 'correct') {
+          statusCol.classList.add('is-correct');
+          statusText.textContent = '✓ Correct! Neural link reinforced.';
+        } else if (entry.status === 'wrong') {
+          statusCol.classList.add('is-wrong');
+          statusText.textContent = '✗ Not quite. Review the answer or try again.';
+        } else {
+          statusText.textContent = 'Pending — Answer to turn green';
+        }
+
+        if (answerPanel) {
+          if (unlocked) {
+            answerPanel.classList.remove('hidden');
+          } else {
+            answerPanel.classList.add('hidden');
+          }
+        }
+
+        if (audioLabel) {
+          audioLabel.textContent = unlocked ? 'Model Audio' : 'Locked until answered';
+        }
+
+        if (audioBtn) {
+          if (unlocked) {
+            audioBtn.disabled = false;
+            audioBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+            audioBtn.title = 'Listen to the answer';
+          } else {
+            audioBtn.disabled = true;
+            audioBtn.classList.add('opacity-40', 'cursor-not-allowed');
+            audioBtn.title = 'Submit your answer or click Answer first';
+          }
+        }
+      }
+
+      function render() {
+        renderTabs();
+        updateGlobalScore();
+
+        const mod = MODULES.find(m => m.id === state.activeModuleId) || MODULES[0];
+        const main = document.getElementById('app-main');
+        const speechItems = mod.speakingItems || [];
+
+        main.innerHTML = `
+          <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+              <div>
+                <span class="inline-block px-2.5 py-1 rounded-full text-xs font-bold bg-indigo-100 text-indigo-700 mb-2">${mod.cefrTag}</span>
+                <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 leading-snug">${mod.title}</h2>
+              </div>
+              <button type="button" id="speak-rule-btn" class="w-full sm:w-auto justify-center px-4 py-2.5 min-h-[44px] rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs sm:text-sm flex items-center gap-2 active:scale-95 transition shrink-0">
+                <span>🔊</span> Listen to Explanation
+              </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-3 sm:gap-4">
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Meaning &amp; Use</div>
+                <p class="text-sm text-slate-800 leading-relaxed">${mod.meaning}</p>
+              </div>
+              <div class="p-4 rounded-xl bg-indigo-50/70 border border-indigo-200">
+                <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">Core Structure</div>
+                <p class="text-sm font-bold text-indigo-950 leading-relaxed">${mod.structure}</p>
+                <p class="text-xs text-indigo-700 mt-2"><strong>🧠 Neural Tip:</strong> ${mod.neuralTip}</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div>
+                <h3 class="text-base sm:text-lg font-extrabold text-slate-900">Guided Examples (${mod.examples.length} A1 Models)</h3>
+                <p class="text-xs text-slate-500">Tap the speaker button on any card to hear the native American English narrator and repeat aloud.</p>
+              </div>
+              <button type="button" id="play-all-examples-btn" class="w-full sm:w-auto justify-center px-3.5 py-2 min-h-[40px] rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 active:scale-95 transition">
+                ▶ Play First 3
+              </button>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              ${mod.examples.map((ex, idx) => `
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:shadow-sm transition flex flex-col justify-between gap-3">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-1.5">
+                      <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-700">Example ${idx + 1}</span>
+                      <button type="button" data-speak="${ex.en.replace(/"/g, '&quot;')}" class="speak-model-btn w-10 h-10 rounded-full bg-white border border-slate-200 hover:border-indigo-400 hover:text-indigo-600 flex items-center justify-center text-base shadow-sm active:scale-95 transition" title="Listen in American English">
+                        🔊
+                      </button>
+                    </div>
+                    <p class="text-sm font-semibold text-slate-900 leading-snug">${ex.en}</p>
+                  </div>
+                  <div class="text-[11px] font-medium text-indigo-700 bg-indigo-50 px-2.5 py-1.5 rounded-lg border border-indigo-100">
+                    ${ex.note}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6 space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div>
+                <h3 class="text-base sm:text-lg font-extrabold text-slate-900">Active Recall Practice (${mod.exercises.length} Exercises)</h3>
+                <p class="text-xs text-slate-500">Answers stay hidden until you submit an attempt and tap <strong>Check</strong>, or tap <strong>Answer</strong>. The pink status card turns <strong>green</strong> when accurate.</p>
+              </div>
+              <button type="button" id="check-all-btn" class="w-full sm:w-auto justify-center px-4 py-2.5 min-h-[44px] rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold shadow-sm active:scale-95 transition">
+                Check All Answers
+              </button>
+            </div>
+
+            <div class="space-y-3.5">
+              ${mod.exercises.map((ex, idx) => {
+                const saved = state.answers[ex.id] || { value: '', status: 'idle' };
+                const unlocked = isAnswerUnlocked(ex.id);
+                const statusClass = saved.status === 'correct' ? 'is-correct' : (saved.status === 'wrong' ? 'is-wrong' : '');
+                const statusLabel = saved.status === 'correct'
+                  ? '✓ Correct! Neural link reinforced.'
+                  : (saved.status === 'wrong' ? '✗ Not quite. Review the answer or try again.' : 'Pending — Answer to turn green');
+
+                return `
+                  <div id="ex-card-${ex.id}" class="grid md:grid-cols-12 gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50/50 items-center">
+                    <div class="md:col-span-8 space-y-2.5">
+                      <div class="text-xs font-bold text-slate-500">Exercise ${idx + 1}</div>
+                      <p class="text-sm font-semibold text-slate-900 leading-snug">${ex.prompt}</p>
+                      <div class="flex flex-col sm:flex-row gap-2">
+                        <input
+                          id="input-${ex.id}"
+                          type="text"
+                          value="${(saved.value || '').replace(/"/g, '&quot;')}"
+                          placeholder="${ex.placeholder}"
+                          autocomplete="off"
+                          autocapitalize="none"
+                          spellcheck="false"
+                          class="w-full sm:flex-1 px-3.5 py-2.5 min-h-[44px] rounded-xl border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        />
+                        <div class="grid grid-cols-3 sm:flex gap-2">
+                          <button type="button" data-check="${ex.id}" class="check-one-btn px-3.5 py-2.5 min-h-[44px] rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold active:scale-95 transition">
+                            Check
+                          </button>
+                          <button type="button" data-hint="${ex.id}" class="hint-btn px-3 py-2.5 min-h-[44px] rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 text-xs font-semibold active:scale-95 transition">
+                            Hint
+                          </button>
+                          <button type="button" data-reveal="${ex.id}" class="reveal-btn px-3 py-2.5 min-h-[44px] rounded-xl border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 text-xs font-semibold active:scale-95 transition">
+                            Answer
+                          </button>
+                        </div>
+                      </div>
+                      <div id="hint-box-${ex.id}" class="hidden text-xs text-indigo-700 bg-indigo-50 px-3 py-2 rounded-lg border border-indigo-200">
+                        💡 ${ex.hint}
+                      </div>
+                      <div class="answer-reveal-box ${unlocked ? '' : 'hidden'} text-xs text-emerald-900 bg-emerald-50 px-3 py-2 rounded-lg border border-emerald-200 font-semibold">
+                        ✓ Answer: <span class="font-bold">${ex.displayAnswer}</span>
+                      </div>
+                    </div>
+
+                    <div class="md:col-span-4 pink-status-col ${statusClass} border-2 rounded-xl p-3 flex flex-col justify-between gap-2 min-h-[82px]">
+                      <div class="text-xs font-bold status-label">${statusLabel}</div>
+                      <div class="flex items-center justify-between gap-2">
+                        <span class="audio-lock-label text-[11px] opacity-80 font-medium">${unlocked ? 'Model Audio' : 'Locked until answered'}</span>
+                        <button
+                          type="button"
+                          data-ex-id="${ex.id}"
+                          data-speak="${ex.displayAnswer.replace(/"/g, '&quot;')}"
+                          ${unlocked ? '' : 'disabled'}
+                          title="${unlocked ? 'Listen to the answer' : 'Submit your answer or click Answer first'}"
+                          class="speak-ex-btn px-3 py-1.5 min-h-[36px] rounded-lg bg-white/80 hover:bg-white text-slate-800 text-xs font-bold shadow-sm active:scale-95 transition ${unlocked ? '' : 'opacity-40 cursor-not-allowed'}"
+                        >
+                          🔊 Listen
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </section>
+
+          <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-6 space-y-5">
+            <div>
+              <span class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-700 mb-1">🎙️ Neural Speech Recognition Lab (${speechItems.length} Sentences)</span>
+              <h3 class="text-base sm:text-lg font-extrabold text-slate-900">Oral Production &amp; Transcription Feedback</h3>
+              <p class="text-xs text-slate-600 mt-0.5">${mod.speakingPrompt}</p>
+            </div>
+
+            <div class="space-y-4">
+              ${speechItems.map((item, idx) => {
+                const isListening = activeMicItemId === item.id;
+                return `
+                  <div class="p-4 rounded-2xl border border-slate-200 bg-slate-50/60 space-y-3">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <span class="text-xs font-extrabold uppercase tracking-wider text-rose-700 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-lg">
+                        Sentence ${idx + 1} of ${speechItems.length}
+                      </span>
+                      <button type="button" data-speak="${item.text.replace(/"/g, '&quot;')}" class="speak-model-btn px-3.5 py-2 min-h-[40px] rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-800 text-xs font-bold shadow-sm active:scale-95 transition">
+                        🔊 Hear Target Sentence
+                      </button>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-indigo-50 border border-indigo-200 text-sm font-semibold text-indigo-950 leading-snug">
+                      "${item.text}"
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2">
+                      <button type="button" data-mic-id="${item.id}" class="mic-item-btn px-4 py-2.5 min-h-[46px] rounded-xl font-bold text-xs sm:text-sm text-white flex items-center justify-center gap-2 active:scale-95 transition ${isListening ? 'bg-rose-600 speaking-pulse' : 'bg-rose-500 hover:bg-rose-600'}">
+                        <span>${isListening ? '⏹ Stop Listening' : '🎙️ Start Speaking (en-US)'}</span>
+                      </button>
+                      <div class="grid grid-cols-2 sm:flex gap-2">
+                        <button type="button" data-eval-id="${item.id}" class="eval-item-btn px-4 py-2.5 min-h-[46px] rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold active:scale-95 transition">
+                          Evaluate
+                        </button>
+                        <button type="button" data-clear-id="${item.id}" class="clear-item-btn px-3.5 py-2.5 min-h-[46px] rounded-xl border border-slate-300 bg-white text-slate-600 hover:bg-slate-100 text-xs font-semibold active:scale-95 transition">
+                          Clear
+                        </button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label for="transcript-box-${item.id}" class="block text-xs font-bold text-slate-600 mb-1">
+                        Live Transcription Box (also editable if mic is unavailable):
+                      </label>
+                      <textarea
+                        id="transcript-box-${item.id}"
+                        rows="2"
+                        placeholder="Your spoken English for Sentence ${idx + 1} will appear here in real time..."
+                        class="w-full p-3 rounded-xl border border-slate-300 bg-white text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-400"
+                      >${state.transcripts[item.id] || ''}</textarea>
+                    </div>
+
+                    <div id="speech-feedback-${item.id}"></div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </section>
+        `;
+
+        document.getElementById('speak-rule-btn').addEventListener('click', () => {
+          speakText(mod.title + '. ' + mod.meaning + ' Structure: ' + mod.structure);
+        });
+
+        document.getElementById('play-all-examples-btn').addEventListener('click', () => {
+          const text = mod.examples.slice(0, 3).map(e => e.en).join(' ... ');
+          speakText(text);
+        });
+
+        main.querySelectorAll('.speak-model-btn').forEach(btn => {
+          btn.addEventListener('click', () => speakText(btn.getAttribute('data-speak')));
+        });
+
+        main.querySelectorAll('.speak-ex-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const exId = btn.getAttribute('data-ex-id');
+            if (!isAnswerUnlocked(exId)) {
+              showToast('Submit your answer or tap Answer first to unlock audio.');
+              return;
+            }
+            speakText(btn.getAttribute('data-speak'));
+          });
+        });
+
+        mod.exercises.forEach(ex => {
+          const inp = document.getElementById('input-' + ex.id);
+          if (inp) {
+            inp.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                checkExercise(ex.id, mod);
+              }
+            });
+          }
+        });
+
+        main.querySelectorAll('.check-one-btn').forEach(btn => {
+          btn.addEventListener('click', () => checkExercise(btn.getAttribute('data-check'), mod));
+        });
+
+        document.getElementById('check-all-btn').addEventListener('click', () => {
+          mod.exercises.forEach(ex => checkExercise(ex.id, mod));
+          showToast('Checked all exercises in ' + mod.shortTitle + '!');
+        });
+
+        main.querySelectorAll('.hint-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const box = document.getElementById('hint-box-' + btn.getAttribute('data-hint'));
+            if (box) box.classList.toggle('hidden');
+          });
+        });
+
+        main.querySelectorAll('.reveal-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-reveal');
+            const ex = mod.exercises.find(e => e.id === id);
+            const inp = document.getElementById('input-' + id);
+            if (ex && inp) {
+              state.revealed[id] = true;
+              inp.value = ex.displayAnswer;
+              checkExercise(id, mod);
+            }
+          });
+        });
+
+        speechItems.forEach(item => {
+          const tBox = document.getElementById('transcript-box-' + item.id);
+          if (tBox) {
+            tBox.addEventListener('input', () => {
+              state.transcripts[item.id] = tBox.value;
+              saveState();
+            });
+          }
+          updateSpeechFeedbackDOM(item);
+        });
+
+        main.querySelectorAll('.mic-item-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const item = speechItems.find(i => i.id === btn.getAttribute('data-mic-id'));
+            if (item) toggleSpeechRecognition(item);
+          });
+        });
+
+        main.querySelectorAll('.eval-item-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-eval-id');
+            const item = speechItems.find(i => i.id === id);
+            const box = document.getElementById('transcript-box-' + id);
+            state.transcripts[id] = box ? box.value : '';
+            saveState();
+            if (item) updateSpeechFeedbackDOM(item);
+          });
+        });
+
+        main.querySelectorAll('.clear-item-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-clear-id');
+            const item = speechItems.find(i => i.id === id);
+            if (activeMicItemId === id) stopActiveRecognition();
+            state.transcripts[id] = '';
+            saveState();
+            const box = document.getElementById('transcript-box-' + id);
+            if (box) box.value = '';
+            if (item) updateSpeechFeedbackDOM(item);
+            render();
+          });
+        });
+      }
+
+      document.getElementById('reset-progress-btn').addEventListener('click', () => {
+        stopActiveRecognition();
+        state.answers = {};
+        state.revealed = {};
+        state.transcripts = {};
+        saveState();
+        render();
+        showToast('All A1 module progress has been reset.');
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
